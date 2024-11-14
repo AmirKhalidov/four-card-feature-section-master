@@ -1,0 +1,287 @@
+// // Variables
+// $color-primary: hsl(234, 12%, 34%);
+// $color-secondary: hsl(229, 6%, 66%);
+// $color-background: hsl(0, 0%, 98%);
+// $color-cyan: hsl(180, 62%, 55%);
+// $color-red: hsl(0, 78%, 62%);
+// $color-orange: hsl(34, 97%, 64%);
+// $color-blue: hsl(212, 86%, 64%);
+
+// // Mixins
+// @mixin card-border($color) {
+//     border-top: 0.25rem solid $color;
+// }
+
+// // Reset
+// *, *::before, *::after {
+//     box-sizing: border-box;
+//     margin: 0;
+//     padding: 0;
+// }
+
+// html {
+//     font-size: 100%; // This makes 1rem = 16px by default
+// }
+
+// body {
+//     font-family: 'Poppins', sans-serif;
+//     font-size: 0.9375rem; // 15px
+//     line-height: 1.5;
+//     background-color: $color-background;
+//     color: $color-secondary;
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     min-height: 100vh;
+//     padding: 5% 5%;
+// }
+
+// // AI Tools Component
+// .ai-tools {
+//     max-width: 69.375rem; // 1110px
+//     width: 100%;
+
+//     &__container {
+//         text-align: center;
+//     }
+
+//     &__title {
+//         color: $color-primary;
+//         font-size: 1.5rem;
+//         font-weight: 200;
+//         margin-bottom: 0.5rem;
+
+//         @media (min-width: 49rem) { // 768px
+//             font-size: 2rem;
+//         }
+//     }
+
+//     &__subtitle {
+//         color: $color-primary;
+//         font-size: 1.5rem;
+//         font-weight: 600;
+//         margin-bottom: 1rem;
+
+//         @media (min-width: 49rem) { // 768px
+//             font-size: 2rem;
+//         }
+//     }
+
+//     &__description {
+//         max-width: 33.75rem; // 540px
+//         margin: 0 auto 4rem;
+//     }
+
+//     &__grid {
+//         display: grid;
+//         gap: 2rem;
+
+//         @media (min-width: 49rem) { // 768px
+//             grid-template-columns: repeat(3, 1fr);
+//             align-items: center;
+//         }
+//     }
+
+//     &__column {
+//         display: flex;
+//         flex-direction: column;
+//         gap: 2rem;
+//     }
+
+//     &__card {
+//         background-color: white;
+//         border-radius: 0.5rem;
+//         box-shadow: 0 0.625rem 1.25rem rgba($color-secondary, 0.15);
+//         padding: 2rem;
+//         text-align: left;
+//         position: relative;
+//         overflow: hidden;
+
+//         &--cyan {
+//             @include card-border($color-cyan);
+//         }
+
+//         &--red {
+//             @include card-border($color-red);
+//         }
+
+//         &--orange {
+//             @include card-border($color-orange);
+//         }
+
+//         &--blue {
+//             @include card-border($color-blue);
+//         }
+//     }
+
+//     &__card-title {
+//         color: $color-primary;
+//         font-size: 1.25rem;
+//         margin-bottom: 0.5rem;
+//     }
+
+//     &__card-description {
+//         font-size: 0.875rem;
+//         margin-bottom: 2rem;
+//     }
+
+//     &__card-icon-wrapper {
+//         text-align: right;
+//     }
+
+//     &__card-icon {
+//         width: 4rem; // 64px
+//         height: auto;
+//     }
+// }
+
+
+// Variables
+$color-primary: hsl(234, 12%, 34%);
+$color-secondary: hsl(229, 6%, 66%);
+$color-background: hsl(0, 0%, 98%);
+$color-cyan: hsl(180, 62%, 55%);
+$color-red: hsl(0, 78%, 62%);
+$color-orange: hsl(34, 97%, 64%);
+$color-blue: hsl(212, 86%, 64%);
+
+// Mixins
+@mixin card-border($color) {
+  border-top: 4px solid $color;
+}
+
+// Reset
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  font-size: 15px;
+  line-height: 1.5;
+  background-color: $color-background;
+  color: $color-secondary;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 5rem 2rem;
+}
+
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 4rem;
+
+  &__title {
+    color: $color-primary;
+    font-weight: 200;
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  &__subtitle {
+    color: $color-primary;
+    font-weight: 600;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  &__description {
+    max-width: 31rem;
+    margin: 0 auto;
+  }
+}
+
+.cards {
+  display: grid;
+  gap: 2rem;
+}
+
+.card {
+  background-color: white;
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: 0 10px 20px rgba($color-secondary, 0.15);
+  position: relative;
+  overflow: hidden;
+  
+
+  &--cyan {
+    @include card-border($color-cyan);
+  }
+
+  &--red {
+    @include card-border($color-red);
+  }
+
+  &--orange {
+    @include card-border($color-orange);
+  }
+
+  &--blue {
+    @include card-border($color-blue);
+  }
+
+  &__title {
+    color: $color-primary;
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+  }
+
+  &__description {
+    font-size: 0.8rem;
+    margin-bottom: 6rem;
+  }
+
+  &__icon {
+    position: absolute;
+    bottom: 2rem;
+    right: 2rem;
+    width: 4rem;
+    height: 4rem;
+  }
+}
+
+// Media query for desktop layout
+@media (min-width: 1024px) {
+  .header {
+    &__title, &__subtitle {
+      font-size: 2.25rem;
+    }
+  }
+
+  .cards {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    gap: 2rem;
+  }
+
+  .card {
+    &--cyan {
+      grid-column: 1;
+      grid-row: 2 / span 2;
+    }
+
+    &--red {
+      grid-column: 2;
+      grid-row: 1 / span 2;
+    }
+
+    &--orange {
+      grid-column: 2;
+      grid-row: 3 / span 2;
+    }
+
+    &--blue {
+      grid-column: 3;
+      grid-row: 2 / span 2;
+    }
+  }
+}
